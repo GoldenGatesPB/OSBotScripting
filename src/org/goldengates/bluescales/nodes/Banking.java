@@ -41,7 +41,7 @@ public class Banking extends Node {
 			if (currentAmount < 1) {
 				s.getBank().withdraw("Dusty key", 1);
 			} else if (currentAmount > 1) {
-				s.getBank().deposit(currentAmount);
+				s.getBank().deposit("Dusty key", (int) currentAmount);
 			}
 		}
 	}
