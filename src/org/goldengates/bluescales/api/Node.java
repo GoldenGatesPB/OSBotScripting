@@ -9,7 +9,7 @@ public abstract class Node {
 	public Node(Script s) {
 		this.s = s;
 	}
-
+	
 	public abstract boolean validate() throws InterruptedException;
 
 	public abstract void execute() throws InterruptedException;

@@ -24,6 +24,7 @@ public class GUI extends JFrame {
 		setTitle("Golden Blue Dragon Scale Looter");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
+		setResizable(false);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -46,6 +47,7 @@ public class GUI extends JFrame {
 		txtFieldName.setBounds(74, 166, 86, 20);
 		contentPane.add(txtFieldName);
 		txtFieldName.setColumns(10);
+		txtFieldName.setText("Monkfish"); // TODO: Fix Later
 
 		lblAmount = new JLabel("Amount: ");
 		lblAmount.setBounds(211, 169, 63, 14);
@@ -55,6 +57,7 @@ public class GUI extends JFrame {
 		spinnerAmt.setModel(new SpinnerNumberModel(0, 0, 27, 1));
 		spinnerAmt.setBounds(263, 166, 51, 20);
 		contentPane.add(spinnerAmt);
+		spinnerAmt.setValue(5); // TODO: Fix Later
 
 		btnStart = new JButton("Start");
 		btnStart.addActionListener(new ActionListener() {
@@ -64,6 +67,8 @@ public class GUI extends JFrame {
 		});
 		btnStart.setBounds(10, 221, 414, 29);
 		contentPane.add(btnStart);
+		
+		setVisible(true);
 	}
 
 	private JPanel contentPane;
