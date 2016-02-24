@@ -77,7 +77,11 @@ public class WalkingToScales extends Node {
 		/** BELOW GROUND **/
 		else {
 			if (UserData.useShortcut) {
-
+				RS2Object pipe = s.getObjects().closest("Obstacle pipe");
+				if (!s.myPlayer().isAnimating()) {
+					pipe.interact("Squeeze-through");
+					MethodProvider.sleep(MethodProvider.random(1500, 2500));
+				}
 			} else {
 				RS2Object dustyGate = s.getObjects().closest(new Area(2924, 9803, 2924, 9803), "Gate");
 				if (PathData.THIRD_GATE_AREA.contains(s.myPosition())) {

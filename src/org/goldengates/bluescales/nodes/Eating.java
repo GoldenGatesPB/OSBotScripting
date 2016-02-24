@@ -25,9 +25,9 @@ public class Eating extends Node {
 	public void execute() throws InterruptedException {
 		GoldenScales.status = "Eating...";
 		s.getInventory().interact("Eat", UserData.foodName);
-		MethodProvider.sleep(MethodProvider.random(750, 1500));
+		MethodProvider.sleep(MethodProvider.random(750, 1000));
 		while (s.myPlayer().isAnimating()) {
-			MethodProvider.sleep(MethodProvider.random(750, 1000));
+			MethodProvider.sleep(MethodProvider.random(250, 500));
 		}
 	}
 

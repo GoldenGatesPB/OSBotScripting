@@ -34,7 +34,7 @@ public class GUI extends JFrame {
 		txtInstructions.setBackground(SystemColor.control);
 		txtInstructions.setText("INSTRUCTIONS:\r\n\r\n- Start in Falador West Bank\r\nOR\r\n- "
 				+ "Start anywhere in the path with teleport\r\n\r\n- Keep at least 100 Falador Teleport Tablets in bank"
-				+ "\r\n- Have a Dusty Key in bank (if less than 70 Agility)\r\n- Recommended to wear weight-reducing gear");
+				+ "\r\n- Have a Dusty Key in bank (if less than 70 Agility)\r\n- GET AN ANTI-FIRE SHIELD PLS TY");
 		txtInstructions.setEditable(false);
 		txtInstructions.setBounds(10, 11, 414, 147);
 		contentPane.add(txtInstructions);

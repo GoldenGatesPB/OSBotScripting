@@ -3,6 +3,7 @@ package org.goldengates.bluescales.nodes;
 import org.goldengates.bluescales.GoldenScales;
 import org.goldengates.bluescales.api.Node;
 import org.goldengates.bluescales.data.PathData;
+import org.goldengates.bluescales.data.UserData;
 import org.osbot.rs07.api.model.GroundItem;
 import org.osbot.rs07.api.ui.Skill;
 import org.osbot.rs07.script.MethodProvider;
@@ -31,12 +32,14 @@ public class Looting extends Node {
 		GoldenScales.status = "Looting...";
 		GroundItem scale = s.getGroundItems().closest(PathData.LOOTING_AREA, "Blue dragon scale");
 		if (scale != null) {
+			int old = (int) s.getInventory().getAmount("Blue dragon scale");
 			s.getCamera().toEntity(scale);
 			scale.interact("Take");
 			MethodProvider.sleep(MethodProvider.random(750, 1000));
 			while (s.myPlayer().isMoving()) {
 				MethodProvider.sleep(MethodProvider.random(250, 500));
 			}
+			UserData.lootCount = (int) s.getInventory().getAmount("Blue dragon scale") - old;
 		}
 	}
 
